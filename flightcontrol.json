@@ -1,0 +1,28 @@
+{
+  "environments": [
+    {
+      "id": "production",
+      "name": "Production",
+      "region": "us-east-1",
+      "source": {
+        "branch": "main"
+      },
+      "services": [
+        {
+          "id": "my-new-webapp",
+          "name": "my-new-webapp",
+          "type": "fargate",
+          "cpu": 0.25,
+          "memory": 512,
+          "minInstances": 1,
+          "maxInstances": 1,
+          "buildCommand": "npm run build",
+          "startCommand": "npm run start",
+          "envVariables": {
+            "SOMETHING_STATIC": "hello-world"
+          }
+        }
+      ]
+    }
+  ]
+}
